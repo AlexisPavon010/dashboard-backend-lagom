@@ -18,8 +18,8 @@ app.use(categoriesRoutes)
 app.use(transactionRoutes)
 app.use(balanceRoutes)
 
-app.get('/*', (req, res) => {
-  res.status(200).send({ ok: true })
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html')
 })
 
 
