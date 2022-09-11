@@ -12,11 +12,15 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+
 app.use(productRoutes)
 app.use(categoriesRoutes)
 app.use(transactionRoutes)
 app.use(balanceRoutes)
 
+app.get('/*', (req, res) => {
+  res.status(200).send({ ok: true })
+})
 
 
 export default app
